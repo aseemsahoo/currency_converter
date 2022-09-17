@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.from_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.to_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.to_comboBox = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -38,6 +39,8 @@
             this.convert_button = new Guna.UI2.WinForms.Guna2Button();
             this.reset_button = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // from_textbox
@@ -138,6 +141,7 @@
             this.from_comboBox.Size = new System.Drawing.Size(88, 57);
             this.from_comboBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.from_comboBox.TabIndex = 3;
+            this.from_comboBox.SelectedIndexChanged += new System.EventHandler(this.from_comboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -158,7 +162,6 @@
             this.amount_label.Size = new System.Drawing.Size(72, 23);
             this.amount_label.TabIndex = 5;
             this.amount_label.Text = "Amount";
-            this.amount_label.Click += new System.EventHandler(this.amount_label_Click);
             // 
             // converted_label
             // 
@@ -227,6 +230,10 @@
             this.guna2Button1.Text = "Convert";
             this.guna2Button1.Click += new System.EventHandler(this.convert_button_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // mainwindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -248,6 +255,7 @@
             this.Name = "mainwindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Currency Converter";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,6 +273,7 @@
         private Guna.UI2.WinForms.Guna2Button convert_button;
         private Guna.UI2.WinForms.Guna2Button reset_button;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 
